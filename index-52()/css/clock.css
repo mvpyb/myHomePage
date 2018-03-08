@@ -1,0 +1,331 @@
+body,p,h1{
+    margin:0;
+    font-family: Georgia,"Times New Roman",Times,Serif;
+    /*font-family: "微软雅黑";*/
+    font-size:16px;
+    line-height: 30px;
+}
+i{
+    font-style: normal;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color:#000;
+}
+.clearFix:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+/*表盘样式*/
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin:25px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .8), inset 0 0 5px rgba(0, 0, 0, .3);
+    /*background: #fcfcfc;*/
+}
+#list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+#list li {
+    position: absolute;
+    top: 5px;
+    left: 99px;
+    width: 2px;
+    height: 7px;
+    background: #999;
+    transform-origin: center 95px;
+}
+#list li:nth-of-type(5n + 1){
+    top: 2px;
+    height: 12px;
+    background: #000;
+    transform-origin: center 98px;
+}
+#list li:nth-of-type(1) {
+    transform: rotate(0);
+}
+#hours {
+    position: absolute;
+    left: 97px;
+    top: 40px;
+    width: 6px;
+    height: 60px;
+    background: #000;
+    transform-origin: bottom;
+
+}
+#hours:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #000;
+    height: 15px;
+    bottom: -15px;
+}
+#minutes {
+    position: absolute;
+    left: 98px;
+    top: 25px;
+    width: 4px;
+    height: 75px;
+    background: #ccc;
+    transform-origin: bottom;
+}
+#minutes:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #ccc;
+    height: 20px;
+    bottom: -20px;
+}
+#seconds {
+    position: absolute;
+    left: 99px;
+    top: 10px;
+    width: 2px;
+    height: 90px;
+    background: red;
+    transform-origin: bottom;
+}
+#seconds:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: red;
+    height: 25px;
+    bottom: -25px;
+}
+#icon {
+    position: absolute;
+    left: 92px;
+    top: 92px;
+    width: 16px;
+    height: 16px;
+    background: #000;
+    border-radius: 50%;
+}
+#wrap{
+    display: none;
+    /*position: absolute;*/
+    position: fixed;
+    /*right:0;*/
+    /*bottom:0;*/
+    width:600px;
+    height:475px;
+    overflow: hidden;
+    border: 1px solid #666;
+    background:url(../img1/s1.jpg) no-repeat;
+    background-size: cover;
+}
+
+#wrap .topBg{
+    position: absolute;
+    width:192px;
+    height:74px;
+    /*background: url(../img/header.png) top right no-repeat;*/
+    background-size: cover;
+    top:0;
+    right:0;
+}
+.topTime{
+    font-size:26px;
+    font-weight:bold;
+    text-align: center;
+    padding-top: 10px;
+    /*background:url(../img/bgtitle.gif) no-repeat left top;*/
+    background-size: contain;
+}
+.topTime a{
+    color:#000099;
+}
+.topTime a:hover{
+    text-decoration:underline;
+}
+.center .left {
+    float:left;
+    width:300px;
+    padding:25px;
+    position: relative;
+    height:313px;
+    /*overflow: hidden;*/
+}
+.center .right{
+    float:left;
+    padding-top:16px;
+}
+.left .leftTitle{
+    text-align: center;
+    position: relative;
+}
+.leftTitle i{
+    position: absolute;
+    top:0px;
+    width:30px;
+    height:30px;
+}
+.leftTitle span{
+    display: block;
+    text-align: center;
+    letter-spacing: 3px;
+    margin:0 35px;
+    font-size:24px;
+}
+.leftTitle .timeTitle1{
+    display:none;
+}
+.leftTitle i:nth-of-type(1){
+    margin-left:7px;
+    left:-2px;
+    background: url(../img1/3.png) no-repeat;
+    background-size:cover;
+}
+.leftTitle i:nth-of-type(2){
+    background: url(../img1/4.png) no-repeat;
+    background-size:cover;
+    right:12px;
+}
+.week .weekInfo{
+    float:left;
+    margin:0 5px;
+    width:32px;
+    text-align: center;
+    font-weight:bold;
+    color:#fff;
+    background:url(../img1/bg_cal_day.gif) 50% 0 no-repeat;
+}
+/*.date ul li{
+    width:42px;
+    height:42px;
+    text-align: center;
+    float:left;
+    line-height: 42px;
+}*/
+.date ul li{
+    width:42px;
+    border-radius: 50%;
+    height:42px;
+    text-align: center;
+    float:left;
+    line-height: 42px;
+}
+.rightTime .time1{
+    text-align: center;
+    font-size:20px;
+    color:#000099;
+}
+.rightTime .week1{
+    text-align: center;
+    font-size:20px;
+    color:#000099;
+    font-weight:bold;
+}
+.footer{
+    /*padding-top:10px;*/
+}
+.footer a{
+    background: rgba(0,0,0,0.1);
+    padding:20px 0;
+    display:block;
+    font-size:26px;
+    text-align: center;
+    color:#000099;
+    font-weight:bold;
+}
+/* 当前天 颜色特殊显示 */
+.date .currentDay{
+    color:red;
+    /*font-weight:bold;*/
+    /*font-size:26px;*/
+}
+/* 其他月颜色 */
+.date .otherMonth{
+    color: #999;
+    /*opacity: .6;*/
+}
+/* 本月 文字颜色 */
+.date .currentMonth{
+    font-size:22px;
+    color: #333;
+}
+.week{
+    position: absolute;
+    top:55px;
+    left:25px;
+    z-index: 88;
+}
+.date{
+    position: absolute;
+    top:85px;
+    left:25px;
+    z-index: 88;
+}
+#wrap .cutP{
+    overflow: hidden;
+    position: absolute;
+    width:300px;
+    top:55px;
+    left:25px;
+    /*left:-290px;*/
+
+
+    height:260px;
+}
+.cut{
+    /*width:200%;*/
+    height:520px;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    font-size:20px;
+    text-align: center;
+    line-height: 84px;
+}
+.cut .cutLi{
+    width:350px;
+    height:260px;
+    float:left;
+}
+.cut .cutLi:nth-of-type(1){
+    left:0;
+}
+.cut .cutLi:nth-of-type(2){
+    right:0;
+}
+.cut ul li{
+    float:left;
+    border-radius: 50%;
+    width:75px;
+    height:84px;
+}
+
+
+#wrap .handle{
+    position:absolute;
+    right:0;
+    top:0;
+    z-index: 666;
+}
+.handle{
+    position:absolute;
+    right:0;
+    top:0;
+}

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<link href="css/index.css" type="text/css" rel="stylesheet">
+<link  href="css/clock.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/tween.js"></script>
+    <!--数组-->
+<script type="text/javascript" src="js/data.js"></script>
+    <!--各种获取函数-->
+<Script type="text/javascript" src="js/acquire.js"></Script>
+    <!--功能函数-->
+<script type="text/javascript" src="js/function.js"></script>
+    <!--时钟函数-->
+<script type="text/javascript" src="js/clock.js"></script>
+    <!--待添加css-->
+<style type="text/css"></style>
+</head>
+<body scroll="no">
+<div class="content" _contextmenu="table">
+    <!--重名提示-->
+    <div class="info">重名了</div>
+    <!--中间内容-->
+    <div class="desktop" _contextmenu="table">
+        <a class="right-link" href="#">
+            <img src="img/powered.gif"/>
+        </a>
+        <ul class="shortcuts">
+
+        </ul>
+    </div>
+
+    <!--底部地址栏-->
+    <div class="task-bar clearFix">
+        <!--底部菜单-->
+        <div class="bar-menu">
+            <!--左边开始-->
+            <div class="start">
+                <button type="button" class="start-button">start</button>
+            </div>
+            <!--中间已打开项目-->
+            <!--<div class="opened">-->
+                <!--<ul class="opened-list clearFix"></ul>-->
+            <!--</div>-->
+            <!--右下角图标-->
+            <div class="panel clearFix">
+                <div class="panel-icon clearFix">
+                    <span></span>
+
+                </div>
+                <!--右下角时钟-->
+                <div class="clock1">
+                    <a href="javascript:;" class="now-time" id="bottomTime"></a>
+                    <a href="javascript:;" class="now-date" id="now-date"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start呼出列表 菜单-->
+    <div class="ux-start-menu">
+        <div class="menu-title">
+            <span>yb computer</span>
+        </div>
+        <div class="menu-body clearFix">
+            <div class="menu-apps-panel">
+                <ul class="menu-list">
+                    <li class="menu-list-item">
+                        <a href="#" class="x-menu-item">
+                            <img src="img/grid.png" class="icon-grid">
+                            Administrator
+                            <span class="more-icon"></span>
+                        </a>
+                        <ol class="more-list">
+                            <li class="more-item">
+                                <a href="javascript:;">
+                                    <img src="img/grid.png" class="icon-grid">
+                                    更改账户设置</a>
+                            </li>
+                            <li class="more-item">
+                                <a href="javascript:;">
+                                    <img src="img/grid.png" class="icon-grid">
+                                    锁定</a>
+                            </li>
+                            <li class="more-item">
+                                <img src="img/grid.png" class="icon-grid">
+                                <a href="javascript:;">注销</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="x-menu-item">
+                            <img src="img/grid.png" class="icon-grid">
+                            我的博客
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-tools-panel">
+                <ul class="x-menu-list">
+                    <li class="list-item">
+                        <a href="#" class="x-menu-item">
+                            <img src="img/paint.png" class="x-menu-item-icon settings">
+                            paint
+                        </a>
+                    </li>
+                    <li class="x-menu-sep-li">
+                        <span class="ux-toolmenu-sep">&nbsp;</span>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="x-menu-item">
+                            <img src="img/sweepLei.png" class="x-menu-item-icon settings">
+                            sweepLei
+                        </a>
+                    </li>
+                    <li class="x-menu-sep-li">
+                        <span class="ux-toolmenu-sep">&nbsp;</span>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="x-menu-item">
+                            <img src="img/ji.png" class="x-menu-item-icon calculator">
+                            calculator
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--点击开始菜单--设置--更改用户设置弹窗--><!--暂时未写    administrator 设置-->
+    <div class="administrator-set">
+        <section class="setting-box">
+            <div class="setting-top clearFix">
+                <h3 class="fl item-title" _contextmenu="explorer">设置</h3>
+                <div class="fr handle">
+                    <span class="fl minimize"></span>
+                    <!--<span class="fl maximize"></span>-->
+                    <span class="fl close"></span>
+                </div>
+            </div>
+            <div class="main-set clearFix">
+                <ul class="main-set-item fl">
+                    <li class="main-set-list">
+                        <a href="javascript:;">主页</a>
+                    </li>
+                    <li class="main-set-list">
+                        <input type="text" placeholder="查找设置">
+                    </li>
+                    <li class="main-set-list">
+                        <a href="javascript:;">账户</a>
+                    </li>
+                    <li class="main-set-list">
+                        <a href="javascript:;">你的信息</a>
+                    </li>
+                    <li class="hover main-set-list">
+                        <a href="javascript:;">电子邮件和应用账户</a>
+                    </li>
+                    <li class="main-set-list">
+                        <a href="javascript:;">登陆选项</a>
+                    </li>
+                    <li class="main-set-list">
+                        <a href="javascript:;">访问工作单位或学校</a>
+                    </li>
+                    <li class="main-set-list">
+                        <a href="javascript:;">其他人员</a>
+                    </li>
+                    <li class="main-set-list">
+                        <a href="javascript:;">同步你的设置</a>
+                    </li>
+                </ul>
+                <div class="main-set-info fl">
+                    <div class="my-info">
+                        <h1 class="my-info-logo">
+                            <a href="javascript:;" class="my-info-logo-bg">
+                                <img src="img/myinfo.png" class="info-logo-bg-img">
+                            </a>
+                        </h1>
+                        <p class="my-info-text">ADMINISTRATOR</p>
+                        <a href="javascript:;">本地账户</a>
+                        <a href="javascript:;">管理员</a>
+                        <p class="set-my-icon1"><a href="javascript:;">创建你的头像</a></p>
+                        <p class="set-my-icon"><a href="javascript:;">摄像头</a></p>
+                        <div class="find-info">
+                            <label for="file" class="uploading">通过浏览方式查找一个</label>
+                            <input type="file" id="file">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--点击右下角qq音乐 呼出qq音乐操作界面-->
+    <div class="qq-music mp4" id="mp4">
+        <div class="setting-top clearFix">
+            <div>
+                <h3 class="fl item-title" _contextmenu="explorer">视频播放器</h3>
+                <div class="fr handle">
+                    <span class="fl minimize"></span>
+                    <span class="fl maximize"></span>
+                    <span class="fl close"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="mp4Wrap">
+            <video src="videoaudio/iceAge.mp4" id="videoMp4"></video>
+            <div class="mp4Controls clearFix" id="mp4Controls">
+                <button class="mp4PlayBtn fl" type="button">播放</button>
+                <span class="mp4Time fl">00:00</span>
+                <input type="range" class="mp4Range fl" step="1" value="0" min="0">
+                <span class="totalTime fl">00:00</span>
+                <input type="number" class="fl" value="1" step=".1" max="4" min=".2" id="playbackRate">
+                <span class="mp4Speed fl">播放速度</span>
+                <input type="range" class="fl" min="0" max="1" value=".5" step=".1" id="volume">
+                <button type="button" class="fl" id="muted">静音</button>
+                <button type="button" class="fl" id="fullScreen">全屏</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--右下角日历时钟-->
+    <div id="wrap">
+        <div class="handle">
+            <span class="fl minimize"></span>
+
+            <span class="fl close"></span>
+        </div>
+        <h1 class="topTime">
+            <a href="javascript:;"></a>
+        </h1>
+        <div class="topBg"></div>
+        <div class="center clearFix">
+            <div class="left">
+                <div class="leftTitle clearFix">
+                    <i class="prev"></i>
+                    <Span class="timeTitle"></Span>
+                    <Span class="timeTitle1">2017年</Span>
+                    <i class="next"></i>
+                </div>
+                <div class="week clearFix">
+                    <i class="weekInfo">日</i>
+                    <i class="weekInfo">一</i>
+                    <i class="weekInfo">二</i>
+                    <i class="weekInfo">三</i>
+                    <i class="weekInfo">四</i>
+                    <i class="weekInfo">五</i>
+                    <i class="weekInfo">六</i>
+                </div>
+
+                <div class="date"></div>
+
+                <div class="cutP">
+                    <div class="cut">
+                        <div class="cutLi">
+                            <ul class="clearFix">
+                                <li>1月</li>
+                                <li>2月</li>
+                                <li>3月</li>
+                                <li>4月</li>
+                            </ul>
+                            <ul class="clearFix">
+                                <li>5月</li>
+                                <li>6月</li>
+                                <li>7月</li>
+                                <li>8月</li>
+                            </ul>
+                            <ul class="clearFix">
+                                <li>9月</li>
+                                <li>10月</li>
+                                <li>11月</li>
+                                <li>12月</li>
+                            </ul>
+                        </div>
+                        <div class="cutLi">
+                            <ul class="clearFix">
+                                <li>1月</li>
+                                <li>2月</li>
+                                <li>3月</li>
+                                <li>4月</li>
+                            </ul>
+                            <ul class="clearFix">
+                                <li>5月</li>
+                                <li>6月</li>
+                                <li>7月</li>
+                                <li>8月</li>
+                            </ul>
+                            <ul class="clearFix">
+                                <li>9月</li>
+                                <li>10月</li>
+                                <li>11月</li>
+                                <li>12月</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="clock">
+                    <ul id="list"></ul>
+                    <div id="hours"></div>
+                    <div id="minutes"></div>
+                    <div id="seconds"></div>
+                    <div id="icon"></div>
+                </div>
+                <div class="rightTime">
+                    <p class="time1"></p>
+                    <p class="week1"></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="javascript:;">更改日期和时间设置......</a>
+        </div>
+    </div>
+
+    <!--各种右键菜单-->
+    <ul class="contentRightMenu" id="contentRightMenu"> </ul>
+
+</div>
+<!--创建资源管理器弹窗 ++ 渲染桌面数据rander-->
+<script type="text/javascript" src="js/createTableLi.js"></script>
+<!--创建右键菜单-->
+<script type="text/javascript">
+    content = document.querySelector('.content');
+
+    contentRightMenu = document.querySelector('.content .contentRightMenu');
+
+    function createContextRightMenu(e,rightData) {
+        var originEvent = e;
+        var nowX = e.clientX;
+        var nowY = e.clientY;
+        var rightEdge1 = window.innerWidth - nowX;
+        var bottomEdge1 = window.innerHeight - nowY;
+        contentRightMenu.style.display = 'block';
+        contentRightMenu.style.zIndex = windowZIndex++;
+        contentRightMenu.style.left = nowX + 'px';
+        contentRightMenu.style.top = nowY + 'px';
+        contentRightMenu.innerHTML = '';
+        contentRightMenu.style.zIndex = 9999;
+        var listW1 = null;
+        var listH1 = null;
+        rightData.forEach(function (item) {
+            var li = document.createElement('li');
+            li.className = 'menuItem';
+            li.innerHTML = item.name;
+            if(item.new){
+                var ol = document.createElement('ol');
+                ol.innerHTML = '';
+                ol.style.zIndex = 99999;
+                ol.className = 'secondMenu';
+                ol.style.top = 5+'px';
+                ol.style.left = 100+'px';
+                //创建二级菜单
+                item.new.forEach(function(item1){
+                    var secLi = document.createElement('li');
+                    secLi.className = 'secMenuList';
+                    secLi.innerHTML = item1.childrenName;
+                    secLi.onclick = function(e) {
+                        //console.log(e);
+                        if (typeof item1.exe == 'function') {
+                            item1.exe(e, originEvent);
+                        }
+                    };
+
+                    secLi.addEventListener("mouseenter",function(e){
+                        this.className = 'menuItem active';
+                    });
+                    secLi.addEventListener("mouseleave",function(e){
+                        this.className = 'menuItem';
+                    });
+                    ol.appendChild(secLi);
+                });
+
+                li.appendChild(ol);
+                if(rightEdge1-listW1 < 110){
+                    ol.style.top = 5+'px';
+                    ol.style.left = -100+'px';
+                }
+
+            }
+            li.addEventListener("mouseenter",function(e){
+                this.className = 'menuItem active';
+            });
+            li.addEventListener("mouseleave",function(e){
+                this.className = 'menuItem';
+            });
+
+
+            li.addEventListener("click",function(e){
+                //console.log(originEvent);
+                if (typeof item.exe == 'function') {
+                    item.exe(e, originEvent);
+                }
+                //e.preventDefault();
+                e.stopPropagation();
+            });
+            contentRightMenu.appendChild(li);
+            listW1 = css(contentRightMenu,"width");
+            listH1 = css(contentRightMenu,"height");
+        });
+
+
+        if(rightEdge1 < listW1){
+            contentRightMenu.style.left = nowX - listW1 + 'px';
+        }else{
+            contentRightMenu.style.left = nowX + 'px';
+        }
+
+        if(bottomEdge1 < listH1){
+            contentRightMenu.style.top = nowY -listH1 + 'px';
+        }else{
+            contentRightMenu.style.top = nowY + 'px';
+        }
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    document.addEventListener("contextmenu",function(e){
+        var menudata = 'global';
+        //console.info(e.target);
+        if (e.target.getAttribute('_contextmenu')) {
+            menudata = e.target.getAttribute('_contextmenu');
+        }
+        createContextRightMenu(e, menuList[menudata]);
+        e.stopPropagation();
+    });
+
+    //TODO
+    var desktop = document.querySelector('.content .desktop');
+    document.addEventListener("click",function(e){
+        //console.info(1);
+        contentRightMenu.style.display = 'none';
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+</script>
+<!--上传文件-->
+<script type="text/javascript">
+    var infoLogoBgImg = content.querySelector('.main-set-info .my-info-logo-bg .info-logo-bg-img');//需要改变背景图的标签
+    var uploading = content.querySelector('.find-info .uploading');
+    var file = content.querySelector('#file');
+
+    file.addEventListener("change",function(e){
+        getFile(this.files[0]);
+        e.stopPropagation();
+    });
+    function getFile(file){
+        var type = file.type.split("/")[0];
+        console.info(type);
+        var reader = new FileReader();
+        reader.onload = function(){
+            getHeadPortrait(infoLogoBgImg,reader.result);
+        };
+
+        if(type == "image"){
+            reader.readAsDataURL(file);
+        } else {
+            alert('你输入的不是图片');
+            return;
+        }
+    }
+
+    function getHeadPortrait(target,data){
+        target.src = data;
+    }
+
+    uploading.addEventListener("click",function(e){
+        e.stopPropagation();
+    });
+    file.addEventListener("click",function(e){
+        e.stopPropagation();
+    });
+
+
+</script>
+<!--创建桌面数据-->
+<Script type="text/javascript">
+    shortcuts = content.querySelector('.shortcuts');
+    var info = content.querySelector('.info');
+    var isMaxOff = false;
+    var _ID = 0;
+    MAXID = getMaxId();
+
+    newFileNames = '';
+    //生成pid == 0桌面数据
+    render(getChildren(0), shortcuts);
+    //桌面图标支持拖拽
+    var shortcutsList1 = shortcuts.getElementsByTagName('li');
+    auto1(shortcutsList1,6,90,90,5);
+
+
+</Script>
+
+<!--右下角弹窗-->
+<script type="text/javascript">
+    windowZIndex = 0;
+//   点击qq音乐
+
+
+    var qqMusicBtn = document.querySelectorAll('.panel-icon span')[0];
+    var vol = document.querySelectorAll('.panel-icon span')[1];
+    var qqMusic = document.querySelector('.content .qq-music');
+    var volSet = document.querySelector('.content .val-set');
+    var mp4 = document.querySelector('.mp4');//最外框
+
+    qqMusicBtn.addEventListener("click",function(e){
+        qqMusic.style.display = "block";
+        mp4Off = true;
+        qqMusic.style.zIndex = windowZIndex++;
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+    //右下角视频播放器
+    (function(){
+        var mp4 = document.querySelector('#mp4');//最外框
+        var mp4Wrap = mp4.querySelector('.mp4Wrap');
+        var videoMp4 = mp4.querySelector('#videoMp4');//视频
+        var mp4Controls = mp4.querySelector('#mp4Controls');//自定义播放面板
+        var mp4PlayBtn = mp4.querySelector('.mp4PlayBtn');//播放按钮
+        var mp4Time = mp4.querySelector('.mp4Time');//当前时间
+        var mp4Range = mp4.querySelector('.mp4Range');//进度条
+        var totalTime = mp4.querySelector('.totalTime');//总时长
+        var playbackRate = mp4.querySelector('#playbackRate');//播放速度进度条
+        var volume = mp4.querySelector('#volume');//音量大小调节
+        var muted = mp4.querySelector('#muted');//静音
+        var fullScreen = mp4.querySelector('#fullScreen');//全屏按钮
+
+        volNum = 0;
+        var duration = 0;  //返回当前音频/视频的长度（以秒计）
+        videoMp4.onloadedmetadata = function(){
+            //"当元数据（比如分辨率和时长）被加载时运行的脚本";
+            setLoad();
+        };
+        function setLoad(){
+            mp4Controls.style.display = "block";
+            duration = Math.ceil(videoMp4.duration);
+            mp4Range.max = duration;
+            totalTime.innerHTML = setTime(duration);
+            mp4PlayBtn.addEventListener('click',function(e){
+                if(videoMp4.paused){
+                    videoMp4.play();//播放
+                    this.innerHTML = "暂停";
+                } else {
+                    videoMp4.pause();//暂停
+                    this.innerHTML = "播放";
+                }
+                e.stopPropagation();
+            });
+        }
+
+        //当播放位置发生改变的时候
+        videoMp4.addEventListener("timeupdate",function(e){
+            var nowTime = Math.ceil(videoMp4.currentTime);
+            mp4Range.value = nowTime;
+            mp4Time.innerHTML = setTime(nowTime);
+            e.stopPropagation();
+        });
+        //进度条发生改变的时候，视频进度也应该相应变动
+        //TODO
+
+        mp4Range.addEventListener("input",function(e){
+            console.log('val',this.value);
+
+            videoMp4.currentTime = this.value;
+
+            console.log('time',videoMp4.currentTime);
+            e.stopPropagation();
+        });
+
+
+        //播放速度调节
+        playbackRate.addEventListener("input",function(e){
+            videoMp4.playbackRate = this.value;
+            e.stopPropagation();
+        });
+
+        //音量大小调节
+        volume.addEventListener("input",function(e){
+            videoMp4.volume = this.value;
+            volNum = Number(this.value);
+            e.stopPropagation();
+        });
+        //静音设置
+        muted.addEventListener("click",function(e){
+            if( videoMp4.muted){
+                videoMp4.muted = false;
+                volume.value = 0;
+            }else{
+                videoMp4.muted = true;
+                volume.value = volNum;
+            }
+            e.stopPropagation();
+        });
+        //全屏设置
+        fullScreen.addEventListener("click",function(e){
+            videoMp4.webkitRequestFullscreen();
+            e.stopPropagation();
+        });
+
+        var itemTitle = mp4.querySelector('.item-title');
+        var minimize = mp4.querySelector('.minimize');
+        var maximize = mp4.querySelector('.maximize');
+        var closeBtn = mp4.querySelector('.close');
+        pull({
+            el:itemTitle,
+            el2:mp4
+        });
+        min1(minimize,mp4);
+        close(closeBtn,mp4);
+
+    })();
+
+    function setTime(n){
+        return  parseInt(n/60) + ':' + toZero(n%60);
+    }
+    
+    function toZero(n){
+        return n<10?'0' + n :n;
+    }
+    window.onresize = function(){
+        autoPlace(qqMusic);
+    };
+</script>
+<!--底部菜单-->
+<script type="text/javascript">
+    var taskBar = document.querySelector('.task-bar');//footer
+    var startBtn = taskBar.querySelector('.start .start-button');
+    var uxStartMenu = document.querySelector('.ux-start-menu');
+    var menuList1 = document.querySelector('.menu-body .menu-list');
+    var changeAdmini = menuList1.querySelectorAll('.more-list .more-item')[0];
+    var administratorSet = document.querySelector('.content .administrator-set');
+
+    var isOff11 = true;
+    startBtn.addEventListener("click",function(e){
+        if(isOff11){
+            uxStartMenu.style.display = 'block';
+            uxStartMenu.style.zIndex = windowZIndex++;
+            startMove(uxStartMenu,{bottom:30,zIndex:99999},200,"easeOut");
+            //css(uxStartMenu,zIndex,99999);
+            isOff11 = false;
+        }else if(!isOff11){
+            uxStartMenu.style.display = 'none';
+            startMove(uxStartMenu,{bottom:-999,zIndex:1},200,"easeOut");
+            //css(uxStartMenu,zIndex,1);
+            isOff11 = true;
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    });
+    var itemTitleadmini = administratorSet.querySelector('.setting-box .item-title');
+    var adminiTitle = administratorSet.querySelector('.setting-top .item-title');
+    changeAdmini.addEventListener("click",function(e){
+        uxStartMenu.style.display = 'none';
+        startMove(uxStartMenu,{bottom:-999,zIndex:1},200,"easeOut");
+        isOff11 = true;
+        administratorSet.style.display = 'block';
+        administratorSet.style.zIndex = windowZIndex++;
+        startMove(administratorSet,{top:20,left:80},300,"easeOut");
+        window.onresize = function(){
+            autoPlace(administratorSet);
+        };
+
+        pull({
+            el:itemTitleadmini,
+            el2:administratorSet
+        });
+        e.stopPropagation();
+        e.preventDefault();
+    });
+    var adminiMin = administratorSet.querySelector('.minimize');
+    var adminiMax = administratorSet.querySelector('.maximize');
+    var adminiClose = administratorSet.querySelector('.close');
+    min(adminiMin,administratorSet);
+    close(adminiClose,administratorSet);
+
+    //移入li显示下一级菜单选项
+    var menuList1 = uxStartMenu.querySelector('.menu-list');
+    var menuListItem = menuList1.querySelectorAll('.menu-list-item');
+
+    for(var i=0;i<menuListItem.length;i++){
+        menuListItem[i].addEventListener("mouseover",function(e){
+            for(var i=0;i<menuListItem.length;i++){
+                menuListItem[i].className = 'menu-list-item';
+            }
+           this.className = 'menu-list-item active';
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    }
+    menuList1.addEventListener("mouseout",function(e){
+        for(var i=0;i<menuListItem.length;i++){
+            menuListItem[i].className = 'menu-list-item';
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+
+</script>
+</body>
+</html>
